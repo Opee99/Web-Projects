@@ -1,0 +1,294 @@
+/* Media Queries for Responsive Design */
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  .skill-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-container {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-container {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Devices (Mobile Landscape) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+  .skill-grid,
+  .project-grid,
+  .education-grid,
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-image {
+    max-width: 100%;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra Small Devices (Mobile Portrait) */
+@media (max-width: 575px) {
+  .container {
+    padding: 0 15px;
+  }
+  .skill-grid,
+  .project-grid,
+  .education-grid,
+  .courses-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-image {
+    max-width: 100%;
+  }
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  .skill-item {
+    padding: 1.5rem;
+  }
+  .skill-tags {
+    gap: 0.5rem;
+  }
+  .skill-tags span {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .nav-links {
+    padding: 15px;
+  }
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+  .hamburger-menu {
+    width: 25px;
+    height: 18px;
+  }
+  .contact-form {
+    padding: 0 1rem;
+  }
+}
+
+/* Specific adjustments for navigation on mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    background: var(--primary);
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+    padding: 20px;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+}
+
+/* Adjustments for skill bars on different screen sizes */
+@media (max-width: 991px) {
+  .skill-bars {
+    gap: 1rem;
+  }
+  
+  .progress-bar {
+    height: 6px;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* Print styles for resume/CV sections */
+@media print {
+  .nav-container,
+  .hamburger-menu,
+  .contact-form,
+  .footer {
+    display: none;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  .hero,
+  .about,
+  .education,
+  .skills,
+  .projects {
+    page-break-inside: avoid;
+  }
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
+          url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%232c3e50"/></svg>');
+  color: white;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #fff, #3498db, #2ecc71, #e74c3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 8s ease infinite;
+  background-size: 300% 300%;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
