@@ -1,0 +1,181 @@
+<html><head><base href="file:///F:/AIFAIR/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fair - AI Videos</title>
+<link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="file:///F:/Ai_Fair/css/videos.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="file:///F:/Ai_Fair/index.html" class="logo">
+                <img src= "F:\Ai_Fair\img\logo\ai_fair.png" alt="AI Fair logo showing a stylized blue profile with network nodes" width="50" height="50">
+                <span>Ai Fair</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="file:///F:/Ai_Fair/index.html">Home</a></li>
+                <li><a href="file:///F:/Ai_Fair/images.html">Images</a></li>
+                <li><a href="file:///F:/Ai_Fair/shorts.html">Shorts</a></li>
+                <li><a href="file:///F:/Ai_Fair/videos.html">Videos</a></li>
+                <li><a href="file:///F:/Ai_Fair/entertainment.html">Entertainment</a></li>
+                <li><a href="file:///F:/Ai_Fair/about.html">About</a></li>
+                <li><a href="file:///F:/Ai_Fair/contact.html">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>AI-Generated Videos</h1>
+            <p>Dive into a world of imagination brought to life by artificial intelligence</p>
+        </section>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search AI-generated videos...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="videos-grid">
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,landscape" alt="AI-generated landscape transformation, morphing between different biomes" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Evolving Worlds</h3>
+                    <p class="video-description">Watch as AI transforms landscapes in real-time</p>
+                    <div class="video-meta">
+                        <span>5:23</span>
+                        <span>2.7M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,space" alt="AI-generated space exploration, visiting alien worlds and phenomena" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Cosmic Odyssey</h3>
+                    <p class="video-description">AI takes us on a journey through the cosmos</p>
+                    <div class="video-meta">
+                        <span>10:15</span>
+                        <span>4.1M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,history" alt="AI-generated historical reenactment, blending different eras seamlessly" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Time Warp Chronicles</h3>
+                    <p class="video-description">AI recreates and reimagines historical events</p>
+                    <div class="video-meta">
+                        <span>15:47</span>
+                        <span>3.5M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,music" alt="AI-generated music visualization, abstract patterns syncing with AI-composed music" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Synthetic Symphonies</h3>
+                    <p class="video-description">AI composes and visualizes new musical genres</p>
+                    <div class="video-meta">
+                        <span>8:32</span>
+                        <span>1.9M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,nature" alt="AI-generated nature documentary, showcasing imaginary ecosystems and creatures" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Biomes of Tomorrow</h3>
+                    <p class="video-description">AI imagines and explores future ecosystems</p>
+                    <div class="video-meta">
+                        <span>20:05</span>
+                        <span>5.3M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <img src="https://source.unsplash.com/random/400x225?ai,architecture" alt="AI-generated architectural evolution, buildings morphing through different styles and eras" width="400" height="225">
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Cityscape Genesis</h3>
+                    <p class="video-description">Watch AI design and build futuristic cities</p>
+                    <div class="video-meta">
+                        <span>12:18</span>
+                        <span>2.2M views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="load-more">Load More</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AI Fair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.load-more').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Here you would typically load more videos from a server
+            // For this example, we'll just clone the existing videos
+            const videosGrid = document.querySelector('.videos-grid');
+            const videos = videosGrid.innerHTML;
+            videosGrid.innerHTML += videos;
+        });
+    </script>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+</html>
