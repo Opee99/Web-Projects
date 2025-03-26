@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - EduPia</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="glassy-neon fixed top-0 w-full py-4 px-8 flex items-center justify-between z-10">
+        <!-- Left Side: EduQuest Logo -->
+        <div class="text-2xl font-bold neon-text hover:scale-105 transition-transform">
+            <i class="fas fa-rocket mr-2"></i> EduPia
+        </div>
+
+        <!-- Hamburger Icon (for mobile) -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none focus:shadow-outline">
+                <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                    <path id="hamburger-icon" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Middle: Animated Menu -->
+        <div class="hidden md:flex space-x-6" id="menu-links">
+            <a href="index.html#cover" class="hover:text-[#00ffff] transition-colors">Home</a>
+            <a href="categories.html" class="hover:text-[#00ffff] transition-colors">Categories</a>
+            <a href="courses.html" class="hover:text-[#00ffff] transition-colors">Courses</a>
+            <a href="index.html#about" class="hover:text-[#00ffff] transition-colors">About Us</a>
+            <a href="index.html#contact" class="hover:text-[#00ffff] transition-colors">Contact</a>
+        </div>
+
+        <!-- Right Side: Profile, Cart, Login -->
+        <div class="flex items-center space-x-4">
+            <a href="profile.html">
+                <i class="fas fa-user text-xl hover:text-cyan-400 transition-colors"></i>
+            </a>
+            <div class="relative">
+                <i class="fas fa-shopping-cart text-xl hover:text-cyan-400 transition-colors"></i>
+                <span class="absolute -top-2 -right-2 bg-cyan-500 text-black rounded-full px-1 text-xs">0</span>
+            </div>
+            <button class="neon-button"> Login</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-16 px-8 mt-20">
+        <div class="flex flex-col md:flex-row gap-8">
+
+            <!-- Left Side: User Profile -->
+            <div class="md:w-1/2 glassy-neon p-6 rounded-lg">
+                <img src="img/MubtasimFuad.png" alt="Profile" class="rounded-full w-48 h-48 mx-auto mb-4">
+                <h2 class="text-2xl font-bold neon-text text-center">Mubtasim Fuad Opee</h2>
+                <p class="text-gray-300 text-center">@mubtasimfuad</p>
+                <p class="text-gray-300 text-center">mubtasimfuad99@gmail.com</p>
+                <div class="text-center mt-4">
+                    <button class="neon-button" id="editProfileButton">Edit Profile</button>
+                </div>
+            </div>
+
+            <!-- Right Side: Enrolled Courses and Progress -->
+            <div class="md:w-1/2 flex flex-col gap-8">
+                <!-- Enrolled Courses Section -->
+                <div class="glassy-neon p-6 rounded-lg">
+                    <h3 class="text-xl font-bold neon-text mb-4">Enrolled Courses</h3>
+                    <ul id="enrolledCoursesList">
+                        <li class="text-gray-300 mb-2">Web Development Basics</li>
+                        <li class="text-gray-300 mb-2">Data Science Fundamentals</li>
+                        <li class="text-gray-300 mb-2">AI and Machine Learning</li>
+                    </ul>
+                </div>
+
+                <!-- Progress Section -->
+                <div class="glassy-neon p-6 rounded-lg">
+                    <h3 class="text-xl font-bold neon-text mb-4">Course Progress</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-300">Web Development Basics</p>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-cyan-500 h-2 rounded-full" style="width: 60%"></div>
+                        </div>
+                        <span class="text-sm text-gray-500">60% Complete</span>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-gray-300">Data Science Fundamentals</p>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-cyan-500 h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-sm text-gray-500">85% Complete</span>
+                    </div>
+                    <div>
+                        <p class="text-gray-300">AI and Machine Learning</p>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div class="bg-cyan-500 h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                        <span class="text-sm text-gray-500">40% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden">
+        <div class="glassy-neon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold neon-text text-center mb-4">Edit Profile</h2>
+            <div class="flex flex-col items-center mb-4">
+                <img src="https://images.unsplash.com/photo-1577880216142-8549e14f8e42?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Profile" class="rounded-full w-32 h-32 mb-2">
+                <button class="neon-button text-xs">Change Picture</button>
+            </div>
+            <form id="editProfileForm">
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="editName">Name</label>
+                    <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="editName" type="text" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="editUsername">Username</label>
+                    <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="editUsername" type="text" placeholder="Username">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-bold mb-2" for="editEmail">Email</label>
+                    <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="editEmail" type="email" placeholder="Email">
+                </div>
+                <div class="text-center mt-4">
+                    <button class="neon-button" type="submit">Save</button>
+                </div>
+            </form>
+            <button id="closeEditProfileModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="glassy-neon py-8 px-8 mt-auto">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Contact Information -->
+            <div class="mb-4 md:mb-0">
+                <p class="text-gray-300">
+                    Call: (123) 456-7890<br>
+                    Email: info@eduquest.com
+                </p>
+            </div>
+
+            <!-- Quick Navigation Links -->
+            <div class="mb-4 md:mb-0">
+                <a href="index.html#cover" class="text-gray-300 hover:text-cyan-400 mr-4"> Home</a>
+                <a href="index.html#categories" class="text-gray-300 hover:text-cyan-400 mr-4"> Categories</a>
+                <a href="index.html#courses" class="text-gray-300 hover:text-cyan-400 mr-4"> Courses</a>
+                <a href="index.html#about" class="text-gray-300 hover:text-cyan-400 mr-4"> About Us</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-cyan-400"> Contact</a>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div>
+                <a href="#" class="text-gray-300 hover:text-cyan-400 mr-4"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-300 hover:text-cyan-400 mr-4"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-gray-300 hover:text-cyan-400"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+        </div>
+        <p class="text-center text-gray-500 mt-4">
+            &copy; 2024 EduPia. All rights reserved.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
