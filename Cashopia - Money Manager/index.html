@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#5b8def" />
+  <title>Cashopia — Money Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="left">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+    </div>
+    <div class="center">
+      <h1 id="headerTitle">Home</h1>
+    </div>
+    <div class="right">
+      <button id="homeAddBtn" class="btn primary"><i class="fa-solid fa-plus"></i> <span data-i18n="tx.addTitle">Add Transaction</span></button>
+    </div>
+  </header>
+
+  <!-- Views -->
+  <main>
+    <!-- HOME -->
+    <section id="view-home" class="view active" role="region" aria-labelledby="headerTitle">
+      <div class="cards">
+        <div class="card">
+          <div class="card-title" data-i18n="home.income">Income</div>
+          <div id="homeIncome" class="stat" data-_value="0">৳0</div>
+          <div class="sub" data-i18n="home.incomeSub">Sum of all income</div>
+        </div>
+        <div class="card">
+          <div class="card-title" data-i18n="home.expense">Expense</div>
+          <div id="homeExpense" class="stat" data-_value="0">৳0</div>
+          <div class="sub" data-i18n="home.expenseSub">Sum of all expenses</div>
+        </div>
+        <div class="card">
+          <div class="card-title" data-i18n="home.balance">Balance</div>
+          <div id="homeBalance" class="stat" data-_value="0">৳0</div>
+          <div class="sub" data-i18n="home.balanceSub">Income - Expense</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3 data-i18n="home.lineTitle">Income vs Expense</h3>
+          <select id="rangeSelect" class="select">
+            <option value="7">7d</option>
+            <option value="15">15d</option>
+            <option value="30" selected>30d</option>
+            <option value="90">90d</option>
+            <option value="180">180d</option>
+          </select>
+        </div>
+        <div class="chart"><canvas id="lineChart" height="220"></canvas></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <h3 data-i18n="home.pieTitle">Expenses by Category</h3>
+          </div>
+          <div class="chart"><canvas id="pieChart" height="250"></canvas></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3 data-i18n="home.barTitle">Top 5 Spending Categories</h3>
+          </div>
+          <div class="chart"><canvas id="barChart" height="250"></canvas></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3 data-i18n="home.doughnutTitle">Income by Source</h3>
+        </div>
+        <div class="chart"><canvas id="doughnutChart" height="250"></canvas></div>
+      </div>
+    </section>
+
+    <!-- TRANSACTIONS -->
+    <section id="view-transactions" class="view">
+      <div class="filters">
+        <input id="txSearch" class="input" type="search" data-i18n-placeholder="tx.searchPh" placeholder="Search transactions…" />
+        <select id="txFilterType" class="select">
+          <option value="" data-i18n="tx.allTypes">All types</option>
+          <option value="income" data-i18n="tx.income">Income</option>
+          <option value="expense" data-i18n="tx.expense">Expense</option>
+        </select>
+        <select id="txFilterCat" class="select">
+          <option value="" data-i18n="tx.allCats">All categories</option>
+        </select>
+      </div>
+
+      <!-- Advanced Filters -->
+      <details class="adv-filters">
+        <summary>Advanced filters</summary>
+        <div class="adv-row">
+          <label>Date from <input id="txDateFrom" type="date" class="input"></label>
+          <label>Date to <input id="txDateTo" type="date" class="input"></label>
+          <label>Min <input id="txAmountMin" type="number" inputmode="decimal" class="input" placeholder="0"></label>
+          <label>Max <input id="txAmountMax" type="number" inputmode="decimal" class="input" placeholder="0"></label>
+        </div>
+      </details>
+
+      <!-- Subscriptions snapshot -->
+      <div class="panel small">
+        <div class="panel-head">
+          <h3>Subscriptions / Recurring</h3>
+          <button id="txAddBtn" class="btn"><i class="fa-solid fa-plus"></i> <span data-i18n="tx.addTitle">Add Transaction</span></button>
+        </div>
+        <div id="subsList" class="subs-list sub"></div>
+      </div>
+
+      <div id="txEmpty" class="empty" data-i18n="tx.empty">No transactions yet. Tap ➕ to add.</div>
+      <div id="txList" class="list"></div>
+    </section>
+
+    <!-- BUDGETS -->
+    <section id="view-budgets" class="view">
+      <div class="panel">
+        <div class="panel-head">
+          <h3 data-i18n="budget.title">Monthly Budgets</h3>
+          <button id="budgetAddBtn" class="btn"><i class="fa-solid fa-plus"></i> <span data-i18n="budget.addTitle">Add Budget</span></button>
+        </div>
+        <div id="budgetsContainer" class="list"></div>
+      </div>
+    </section>
+
+    <!-- MORE -->
+    <section id="view-more" class="view">
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head">
+            <h3 data-i18n="more.profile">Profile</h3>
+          </div>
+          <div class="form">
+            <div class="profile-row">
+              <img id="profileAvatar" class="avatar" alt="Avatar" />
+              <label class="file">
+                <input id="profilePic" type="file" accept="image/*" />
+                <span data-i18n="more.pic">Profile picture</span>
+              </label>
+            </div>
+            <label><span data-i18n="more.name">Name</span><input id="profileName" class="input" data-i18n-placeholder="more.namePlaceholder" placeholder="Your name" /></label>
+            <label><span data-i18n="more.email">Email</span><input id="profileEmail" class="input" data-i18n-placeholder="more.emailPlaceholder" placeholder="Your email" /></label>
+            <label><span data-i18n="more.occupation">Occupation</span><input id="profileOccupation" class="input" data-i18n-placeholder="more.occupationPlaceholder" placeholder="Your occupation" /></label>
+            <label><span data-i18n="more.phone">Phone</span><input id="profilePhone" class="input" data-i18n-placeholder="more.phonePlaceholder" placeholder="Phone number" /></label>
+            <label><span data-i18n="more.bio">Bio</span><textarea id="profileBio" class="input" rows="2" data-i18n-placeholder="more.bioPlaceholder" placeholder="A short bio (optional)"></textarea></label>
+            <button id="saveProfileBtn" class="btn primary" data-i18n="btn.save">Save</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3 data-i18n="more.theme">Theme</h3></div>
+          <div class="form">
+            <label class="switch"><input id="themeSwitch" type="checkbox" /><span></span><b data-i18n="more.darkMode">Dark mode</b></label>
+            <label><span data-i18n="more.brandColor">Brand color</span><input id="brandColor" type="color" value="#5b8def" class="input" /></label>
+            <label><span data-i18n="more.language">Language</span>
+              <select id="languageSelect" class="select"><option value="en">English</option><option value="bn">বাংলা</option></select>
+            </label>
+            <label><span data-i18n="more.currency">Currency</span>
+              <select id="currencySelect" class="select"><option value="BDT">BDT (৳)</option><option value="USD">USD ($)</option><option value="EUR">EUR (€)</option><option value="INR">INR (₹)</option></select>
+            </label>
+            <label class="switch"><input id="notifSwitch" type="checkbox" /><span></span><b data-i18n="more.notifToggle">Enable notifications</b></label>
+          </div>
+        </div>
+
+        <!-- Category Manager -->
+        <div class="panel">
+          <div class="panel-head">
+            <h3>Category Manager</h3>
+            <button id="catAddBtn" class="btn"><i class="fa-solid fa-plus"></i> Add</button>
+          </div>
+          <div id="catList" class="list small"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3 data-i18n="more.security">Security</h3></div>
+          <div class="form">
+            <label><span data-i18n="more.setPasscode">Set Passcode</span><input id="passcodeInput" type="password" class="input" inputmode="numeric" maxlength="12" /></label>
+            <button id="savePasscodeBtn" class="btn" data-i18n="btn.save">Save</button>
+            <div class="sub" data-i18n="more.passcodeNote">Note: passcode is stored locally on your device.</div>
+          </div>
+          <div class="form">
+            <div class="row">
+              <button id="exportJsonBtn" class="btn">Export JSON</button>
+              <button id="exportCsvBtn" class="btn">Export CSV</button>
+              <input id="importFile" type="file" class="hidden" accept=".json,.csv,text/csv" />
+              <button id="importBtn" class="btn">Import</button>
+              <button id="resetBtn" class="btn danger" data-i18n="btn.reset">Reset All</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3 data-i18n="more.activity">Activity Log</h3></div>
+          <div id="activityLog" class="activity"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3 data-i18n="more.about">About</h3></div>
+          <p class="sub" data-i18n="more.aboutText1">
+            Cashopia helps you track income, expenses, and budgets—privately on your device.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom Nav -->
+  <nav class="bottom-nav" role="tablist">
+    <button class="tab active" data-view="home" aria-selected="true"><i class="fa-solid fa-house"></i><span data-i18n="nav.home">Home</span></button>
+    <button class="tab" data-view="transactions" aria-selected="false"><i class="fa-solid fa-list"></i><span data-i18n="nav.transactions">Transactions</span></button>
+    <button class="tab" data-view="budgets" aria-selected="false"><i class="fa-solid fa-wallet"></i><span data-i18n="nav.budgets">Budgets</span></button>
+    <button class="tab" data-view="more" aria-selected="false"><i class="fa-solid fa-ellipsis"></i><span data-i18n="nav.more">More</span></button>
+  </nav>
+
+  <!-- Toast -->
+  <div id="toastWrap" class="toast-wrap"></div>
+
+  <!-- Lock overlay -->
+  <div id="lockOverlay" class="lock hidden" aria-hidden="true">
+    <div class="lock-box">
+      <div class="title" data-i18n="more.lockEnter">Enter passcode</div>
+      <input id="lockInput" type="password" class="input" inputmode="numeric" />
+      <div id="lockHint" class="sub"></div>
+      <button id="unlockBtn" class="btn primary" data-i18n="btn.unlock">Unlock</button>
+    </div>
+  </div>
+
+  <!-- Transaction Modal -->
+  <div id="txModal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="txModalTitle">Add Transaction</h3>
+        <button id="txModalClose" class="icon-btn close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="txForm" class="form">
+        <input type="hidden" id="txId" />
+        <label><span data-i18n="tx.type">Type</span>
+          <select id="txType" class="select">
+            <option value="expense" data-i18n="tx.expense">Expense</option>
+            <option value="income" data-i18n="tx.income">Income</option>
+          </select>
+        </label>
+        <label><span data-i18n="tx.category">Category</span>
+          <select id="txCategory" class="select"></select>
+        </label>
+        <label><span data-i18n="tx.amount">Amount</span>
+          <input id="txAmount" type="number" inputmode="decimal" class="input" step="0.01" placeholder="0" />
+        </label>
+        <label><span data-i18n="tx.date">Date</span>
+          <input id="txDate" type="date" class="input" />
+        </label>
+        <label><span data-i18n="tx.recurring">Recurring</span>
+          <select id="txRecurring" class="select">
+            <option value="" data-i18n="tx.none">None</option>
+            <option value="1" data-i18n="tx.daily">Daily</option>
+            <option value="7" data-i18n="tx.weekly">Weekly</option>
+            <option value="30" data-i18n="tx.monthly">Monthly</option>
+          </select>
+        </label>
+        <label><span data-i18n="tx.notes">Notes (optional)</span>
+          <textarea id="txNotes" class="input" rows="2" data-i18n-placeholder="tx.notesPh" placeholder="Add a note…"></textarea>
+        </label>
+      </form>
+      <div class="modal-foot">
+        <button id="txDeleteBtn" class="btn danger hidden" data-i18n="btn.delete">Delete</button>
+        <div class="spacer"></div>
+        <button id="txSaveBtn" class="btn primary" data-i18n="btn.save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Budget Modal -->
+  <div id="budgetModal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="budgetModalTitle">Add Budget</h3>
+        <button id="budgetModalClose" class="icon-btn close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="budgetForm" class="form">
+        <input type="hidden" id="budgetId" />
+        <label><span data-i18n="tx.category">Category</span>
+          <select id="budgetCategory" class="select"></select>
+        </label>
+        <label><span data-i18n="budget.monthlyAmount">Monthly Budget Amount</span>
+          <input id="budgetAmount" type="number" class="input" step="0.01" placeholder="0" />
+        </label>
+      </form>
+      <div class="modal-foot">
+        <button id="budgetDeleteBtn" class="btn danger hidden" data-i18n="btn.remove">Remove</button>
+        <div class="spacer"></div>
+        <button id="budgetSaveBtn" class="btn primary" data-i18n="btn.save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Modal -->
+  <div id="catModal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3 id="catModalTitle">Add Category</h3>
+        <button id="catModalClose" class="icon-btn close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="catForm" class="form">
+        <input type="hidden" id="catId" />
+        <label>Type
+          <select id="catType" class="select">
+            <option value="expense" data-i18n="tx.expense">Expense</option>
+            <option value="income" data-i18n="tx.income">Income</option>
+          </select>
+        </label>
+        <label>Icon (emoji) <input id="catIcon" class="input" placeholder="e.g. 🍱" /></label>
+        <label>Name (English) <input id="catNameEn" class="input" /></label>
+        <label>নাম (বাংলা) <input id="catNameBn" class="input" /></label>
+      </form>
+      <div class="modal-foot">
+        <button id="catDeleteBtn" class="btn danger hidden" data-i18n="btn.delete">Delete</button>
+        <div class="spacer"></div>
+        <button id="catSaveBtn" class="btn primary" data-i18n="btn.save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
