@@ -1,0 +1,140 @@
+<html><head><base href="file:///F:/AIFAIR/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fair - Entertainment</title>
+<link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<link rel="stylesheet" href="file:///F:/Ai_Fair/css/entertainment.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="file:///F:/Ai_Fair/index.html" class="logo">
+                <img src= "F:\Ai_Fair\img\logo\ai_fair.png" alt="AI Fair logo showing a stylized blue profile with network nodes" width="50" height="50">
+                <span>Ai Fair</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="file:///F:/Ai_Fair/index.html">Home</a></li>
+                <li><a href="file:///F:/Ai_Fair/images.html">Images</a></li>
+                <li><a href="file:///F:/Ai_Fair/shorts.html">Shorts</a></li>
+                <li><a href="file:///F:/Ai_Fair/videos.html">Videos</a></li>
+                <li><a href="file:///F:/Ai_Fair/entertainment.html">Entertainment</a></li>
+                <li><a href="file:///F:/Ai_Fair/about.html">About</a></li>
+                <li><a href="file:///F:/Ai_Fair/contact.html">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>AI-Powered Entertainment</h1>
+            <p>Explore a new world of AI-generated fun and creativity</p>
+        </section>
+
+        <div class="entertainment-grid">
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?game" alt="AI-generated game scene with fantastical creatures and landscapes" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">AI Game Studio</h3>
+                    <p class="entertainment-description">Create and play games designed by artificial intelligence. Experience unique storylines and ever-changing gameplay.</p>
+                </div>
+            </div>
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?music" alt="AI-generated abstract visualization of music" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">AI DJ Mixer</h3>
+                    <p class="entertainment-description">Mix and create music with AI. Generate unique tracks, remix classics, and discover new sounds.</p>
+                </div>
+            </div>
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?story" alt="AI-generated storybook illustration with fantastical elements" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">StoryForge AI</h3>
+                    <p class="entertainment-description">Craft interactive stories with AI. Your choices shape the narrative in endless possibilities.</p>
+                </div>
+            </div>
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?art" alt="AI-generated abstract artwork with vibrant colors and shapes" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">AI Art Gallery</h3>
+                    <p class="entertainment-description">Explore an ever-changing exhibition of AI-created artworks. New pieces generated daily.</p>
+                </div>
+            </div>
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?puzzle" alt="AI-generated complex puzzle with intricate patterns" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">Neural Puzzles</h3>
+                    <p class="entertainment-description">Challenge yourself with AI-generated puzzles that adapt to your skill level. Never the same puzzle twice!</p>
+                </div>
+            </div>
+            <div class="entertainment-item">
+                <div class="entertainment-image">
+                    <img src="https://source.unsplash.com/random/400x300?comedy" alt="AI-generated comedic scene with absurd elements" width="400" height="300">
+                </div>
+                <div class="entertainment-info">
+                    <h3 class="entertainment-title">LaughTrack AI</h3>
+                    <p class="entertainment-description">Experience AI-generated comedy. From jokes to sitcom scenarios, let AI tickle your funny bone.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AI Fair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

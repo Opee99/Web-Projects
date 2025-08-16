@@ -1,0 +1,175 @@
+<html><head><base href="file:///F:/AIFAIR/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About AI Fair</title>
+<link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="file:///F:/Ai_Fair/css/about.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="file:///F:/Ai_Fair/index.html" class="logo">
+                <img src= "F:\Ai_Fair\img\logo\ai_fair.png" alt="AI Fair logo showing a stylized blue profile with network nodes" width="50" height="50">
+                <span>Ai Fair</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="file:///F:/Ai_Fair/index.html">Home</a></li>
+                <li><a href="file:///F:/Ai_Fair/images.html">Images</a></li>
+                <li><a href="file:///F:/Ai_Fair/shorts.html">Shorts</a></li>
+                <li><a href="file:///F:/Ai_Fair/videos.html">Videos</a></li>
+                <li><a href="file:///F:/Ai_Fair/entertainment.html">Entertainment</a></li>
+                <li><a href="file:///F:/Ai_Fair/about.html">About</a></li>
+                <li><a href="file:///F:/Ai_Fair/contact.html">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1>About AI Fair</h1>
+                    <p>Welcome to AI Fair, your gateway to the fascinating world of artificial intelligence-generated content. We are passionate about showcasing the incredible possibilities that emerge when human creativity meets machine learning.</p>
+                    <p>Founded in 2024, AI Fair has quickly become a leading platform for exploring, enjoying, and understanding AI-generated art, videos, music, and more. Our team of AI enthusiasts, artists, and technologists work tirelessly to curate the most inspiring and innovative AI creations from around the globe.</p>
+                    <p>At AI Fair, we believe that AI is not just a tool, but a collaborative partner in the creative process. We aim to bridge the gap between technology and artistry, showcasing how AI can enhance human creativity rather than replace it.</p>
+                </div>
+                <div class="about-image">
+                    <img src="F:\Ai_Fair\img\ai.jpg" alt="Futuristic technology display representing AI and human collaboration" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container">
+                <div class="info-content">
+                    <div class="info-box mission">
+                        <h2>Our Mission</h2>
+                        <p>To democratize access to AI-generated content and foster a community where artists, technologists, and enthusiasts can explore the boundaries of creativity in the age of artificial intelligence.</p>
+                    </div>
+                    <div class="info-box vision">
+                        <h2>Our Vision</h2>
+                        <p>We envision a future where AI and human creativity synergize to produce art forms and experiences beyond our current imagination, pushing the boundaries of what's possible in digital content creation.</p>
+                    </div>
+                    <div class="info-box offer">
+                        <h2>What We Offer</h2>
+                        <p>AI Fair provides a curated platform for AI-generated content including images, videos, and interactive entertainment. We offer:</p>
+                        <ul>
+                            <li>A diverse gallery of AI-generated artwork</li>
+                            <li>Educational resources on AI in creative fields</li>
+                            <li>Community forums for discussions</li>
+                            <li>Tools for AI-assisted creativity</li>
+                            <li>Workshops with leading AI artists</li>
+                            <li>A marketplace for AI-generated content</li>
+                        </ul>
+                    </div>
+                    <div class="info-box founder">
+                        <h2>Our Founder</h2>
+                        <div class="founder-section">
+                            <div class="founder-image">
+                                <img src="F:\Ai_Fair\img/opee.png" alt="Portrait of Dr. Aisha Chen, founder of AI Fair" width="200" height="200">
+                            </div>
+                            <div class="founder-info">
+                                <p><b>Mubtasim Faud Opee</b></p>
+                                <p>Mubtasim Fuad Opee is the visionary founder of AI Fair. Currently a student of Computer Science & Engineering, Mubtasim's passion for artificial intelligence and its potential to transform our world led him to create AI Fair. Despite his young age, he saw the need for a platform that could bridge the gap between complex AI technologies and the general public. AI Fair is the result of his vision - a space where everyone can explore and appreciate the wonders of artificial intelligence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box journey">
+                        <h2>Join Us on Our AI Journey</h2>
+                        <p>Whether you're an AI enthusiast, a curious observer, or a seasoned creator, there's a place for you at AI Fair. Join our community to:</p>
+                        <ul>
+                            <li>Explore the latest in AI-generated content across various mediums</li>
+                            <li>Participate in thought-provoking discussions about the future of AI in creativity</li>
+                            <li>Contribute your own AI-assisted creations to our growing gallery</li>
+                            <li>Collaborate with other artists and technologists on innovative projects</li>
+                            <li>Learn about cutting-edge AI technologies and their creative applications</li>
+                            <li>Shape the future of digital creativity and AI-human collaboration</li>
+                        </ul>
+                        <p>Together, we're not just witnessing the AI revolution in art and content creation—we're actively shaping it. Join us and be part of this exciting journey into the future of creativity!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AI Fair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add a subtle animation to info boxes on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.info-box').forEach(box => {
+                box.style.opacity = 0;
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                observer.observe(box);
+            });
+        });
+    </script>
+
+<script>
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
+</script>
+</body>
+</html>

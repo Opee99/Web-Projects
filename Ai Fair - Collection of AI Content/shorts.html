@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="file:///F:/AIFAIR/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fair - AI Shorts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="file:///F:/Ai_Fair/css/shorts.css"> <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="file:///F:/Ai_Fair/index.html" class="logo">
+                <img src= "F:\Ai_Fair\img\logo\ai_fair.png" alt="AI Fair logo showing a stylized blue profile with network nodes" width="50" height="50">
+                <span>Ai Fair</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="file:///F:/Ai_Fair/index.html">Home</a></li>
+                <li><a href="file:///F:/Ai_Fair/images.html">Images</a></li>
+                <li><a href="file:///F:/Ai_Fair/shorts.html">Shorts</a></li>
+                <li><a href="file:///F:/Ai_Fair/videos.html">Videos</a></li>
+                <li><a href="file:///F:/Ai_Fair/entertainment.html">Entertainment</a></li>
+                <li><a href="file:///F:/Ai_Fair/about.html">About</a></li>
+                <li><a href="file:///F:/Ai_Fair/contact.html">Contact</a></li>
+            </ul>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </nav>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>AI-Generated Shorts</h1>
+            <p>Experience bite-sized creativity powered by artificial intelligence</p>
+        </section>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search AI-generated shorts...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="shorts-grid">
+            <div class="short-item">
+                <div class="short-thumbnail">
+                    <img src="F:\Ai_Fair\img\cookie2.jpg"
+                        alt="The Cookie Conspiracy" width="400"
+                        height="711">
+                </div>
+                <div class="short-info">
+                    <h3 class="short-title">The Cookie Conspiracy</h3>
+                    <p class="short-description">The Cookie Conspiracy</p>
+                    <div class="short-meta">
+                        <span>15s</span>
+                        <span>1.2M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="short-item">
+                <div class="short-thumbnail">
+                    <img src="F:\Ai_Fair\img\magic_worsd.jpg"
+                        alt="The Magic Words" width="400"
+                        height="711">
+                </div>
+                <div class="short-info">
+                    <h3 class="short-title">The Magic Words</h3>
+                    <p class="short-description">The Magic Words</p>
+                    <div class="short-meta">
+                        <span>30s</span>
+                        <span>876K views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="short-item">
+                <div class="short-thumbnail">
+                    <img src="F:\Ai_Fair\img\emily.jpg"
+                        alt="The Story of Emily" width="400"
+                        height="711">
+                </div>
+                <div class="short-info">
+                    <h3 class="short-title">The Story of Emily</h3>
+                    <p class="short-description">The Story of Emily</p>
+                    <div class="short-meta">
+                        <span>20s</span>
+                        <span>2.3M views</span>
+                    </div>
+                </div>
+            </div>
+            <div class="short-item">
+                <div class="short-thumbnail">
+                    <img src="F:\Ai_Fair\img\a_tired_mother.jpg"
+                        alt="A Tired Mother"
+                        width="400" height="711">
+                </div>
+                <div class="short-info">
+                    <h3 class="short-title">A Tired Mother</h3>
+                    <p class="short-description">A Tired Mother</p>
+                    <div class="short-meta">
+                        <span>25s</span>
+                        <span>1.5M views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://www.youtube.com/@Ai_Fair/shorts" class="load-more">Load More</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AI Fair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.load-more').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Here you would typically load more shorts from a server
+            // For this example, we'll just clone the existing shorts
+            const shortsGrid = document.querySelector('.shorts-grid');
+            const shorts = shortsGrid.innerHTML;
+            shortsGrid.innerHTML += shorts;
+        });
+    </script>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+    
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+    
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+</html>

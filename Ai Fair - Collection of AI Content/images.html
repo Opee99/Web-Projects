@@ -1,0 +1,188 @@
+<html><head><base href="file:///F:/AIFAIR/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai Fair - Ai Images</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="file:///F:/Ai_Fair/css/images.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="container">
+                <a href="file:///F:/Ai_Fair/index.html" class="logo">
+                    <img src= "F:\Ai_Fair\img\logo\ai_fair.png" alt="AI Fair logo showing a stylized blue profile with network nodes" width="50" height="50">
+                    <span>Ai Fair</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="file:///F:/Ai_Fair/index.html">Home</a></li>
+                    <li><a href="file:///F:/Ai_Fair/images.html">Images</a></li>
+                    <li><a href="file:///F:/Ai_Fair/shorts.html">Shorts</a></li>
+                    <li><a href="file:///F:/Ai_Fair/videos.html">Videos</a></li>
+                    <li><a href="file:///F:/Ai_Fair/entertainment.html">Entertainment</a></li>
+                    <li><a href="file:///F:/Ai_Fair/about.html">About</a></li>
+                    <li><a href="file:///F:/Ai_Fair/contact.html">Contact</a></li>
+                </ul>
+                <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </header>
+    
+        <main class="container">
+            <section class="hero">
+                <h1>AI-Generated Images</h1>
+                <p>Explore a world of creativity powered by artificial intelligence</p>
+            </section>
+    
+            <div class="search-box">
+                <input type="text" placeholder="Search AI-generated images...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+    
+            <div class="category-buttons">
+                <button class="category-button active">All</button>
+                <button class="category-button">Abstract</button>
+                <button class="category-button">Landscape</button>
+                <button class="category-button">Portrait</button>
+                <button class="category-button">Sci-Fi</button>
+                <button class="category-button">Fantasy</button>
+            </div>
+    
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="F:\Ai_Fair\img\art.jpg" alt="AI-generated abstract art, colorful swirls" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Abstract Harmony</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="F:\Ai_Fair\img\A_bear_eats_honey_from_a_jar_white_background_wa_0.jpg" alt="AI-generated landscape, mountain lake at sunset" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Digital Serenity</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="F:\Ai_Fair\img\An_abstract_digital_representation_of_a_tree_with_vibr_0.jpg" alt="AI-generated portrait, futuristic cyborg face" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Future Face</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="F:\Ai_Fair\img\a_giant_cosmic_hand_tossing_dice_into_sp_2.jpg" alt="AI-generated abstract composition, geometric shapes" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Neon Metropolis</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://source.unsplash.com/random/400x400?ai,nature1" alt="AI-generated lush forest scene with fantastical elements" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Digital Eden</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://source.unsplash.com/random/400x400?ai,abstract1" alt="AI-generated geometric abstract composition" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Pixel Poetry</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://source.unsplash.com/random/400x400?ai,fantasy1" alt="AI-generated fantastical creature in a mystical setting" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Mythic Vision</div>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://source.unsplash.com/random/400x400?ai,technology1" alt="AI-generated futuristic technology concept" width="400" height="400">
+                    <div class="image-overlay">
+                        <div class="image-text">Tech Dreams</div>
+                    </div>
+                </div>
+            </div>
+    
+            <a href="#" class="load-more">Load More</a>
+        </main>
+    
+        <footer>
+            <div class="container">
+                <p>&copy; 2023 AI Fair. All rights reserved.</p>
+            </div>
+        </footer>
+    
+        <script>
+            document.querySelector('.load-more').addEventListener('click', function(e) {
+                e.preventDefault();
+                // Here you would typically load more images from an API
+                // For demonstration, we'll just add a few more static images
+                const imageGrid = document.querySelector('.image-grid');
+                const newImages = [
+                    { src: 'https://source.unsplash.com/random/400x400?ai,art2', alt: 'AI-generated surreal artwork', text: 'Digital Dreamscape' },
+                    { src: 'https://source.unsplash.com/random/400x400?ai,landscape2', alt: 'AI-generated alien planet landscape', text: 'Exoplanet Vista' },
+                    { src: 'https://source.unsplash.com/random/400x400?ai,portrait2', alt: 'AI-generated portrait of an ethereal being', text: 'Ethereal Entity' },
+                    { src: 'https://source.unsplash.com/random/400x400?ai,scifi2', alt: 'AI-generated space station interior', text: 'Cosmic Corridors' }
+                ];
+    
+                newImages.forEach(img => {
+                    const newItem = document.createElement('div');
+                    newItem.className = 'image-item';
+                    newItem.innerHTML = `
+                        <img src="${img.src}" alt="${img.alt}" width="400" height="400">
+                        <div class="image-overlay">
+                            <div class="image-text">${img.text}</div>
+                        </div>
+                    `;
+                    imageGrid.appendChild(newItem);
+                });
+            });
+    
+            // Category button functionality
+            const categoryButtons = document.querySelectorAll('.category-button');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // Here you would typically filter the images based on the selected category
+                    // For this demo, we'll just log the selected category
+                    console.log('Selected category:', this.textContent);
+                });
+            });
+        </script>
+        <script>
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+        
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    localStorage.setItem('darkMode', null);
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+        
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+        
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuToggle.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        </script>
+    </body>
+    </html>
