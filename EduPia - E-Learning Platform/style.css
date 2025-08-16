@@ -1,0 +1,186 @@
+
+
+
+/* Custom CSS for Glassy Neon Theme */
+body {
+    font-family: 'Alatsi', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.glassy-neon {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 0 5px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.neon-text {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5),
+                 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.neon-button {
+    background: linear-gradient(to right, #00ffff, #00bfff);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.neon-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Particle animation styles */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Custom animations */
+@keyframes rotateText {
+    0% {
+      transform: translateY(0);
+    }
+
+    33% {
+      transform: translateY(-1.2em);
+    }
+
+    66% {
+      transform: translateY(-2.4em);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.rotating-text-container {
+    height: 2.4em;
+    overflow: hidden;
+}
+
+/* Category card glow effect */
+.category-card:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer a:hover {
+    color: #00ffff;
+}
+
+/* Course card hover effect */
+.course-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Transparent button for course cards */
+.course-card .neon-button {
+    background: transparent;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    box-shadow: none;
+}
+
+.course-card .neon-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/*cart number*/
+.fa-shopping-cart + span {
+    background-color: red;
+}
+
+/* Mobile Banking App Styles */
+.mobile-banking-app {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-banking-app:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.mobile-banking-app img {
+    max-width: 100px;
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.mobile-banking-app.selected {
+    background: linear-gradient(to right, #00ffff, #00bfff);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+    .md\:flex {
+        display: none !important; /* Hide menu links on mobile by default */
+    }
+    .md\:hidden {
+        display: block !important; /* Show hamburger icon on mobile */
+    }
+    nav.glassy-neon {
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start in column layout */
+    }
+    nav.glassy-neon .flex.items-center.space-x-4 {
+        margin-top: 10px; /* Add some space between menu and icons */
+    }
+    #menu-links.mobile-menu-active {
+        display: flex !important;
+        flex-direction: column; /* Stack links vertically in mobile menu */
+        width: 100%; /* Full width for mobile menu */
+        margin-top: 10px; /* Space below navbar brand */
+    }
+    #menu-links.mobile-menu-active a {
+        padding: 10px 15px;
+        display: block; /* Make each link full width for easier tapping */
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* Optional separator for links */
+        transition: color 0.3s ease; /* Add smooth transition */
+    }
+
+    /* Navigation Link Hover Effect on Mobile */
+    #menu-links.mobile-menu-active a:hover {
+        color: #00ffff; /* Change color on hover */
+    }
+
+    #hamburger-icon {
+        fill: #fff; /* Ensure hamburger icon is visible */
+    }
+}
+
+/* Navigation Link Hover Effect */
+nav .hidden.md\:flex a:hover {
+    color: #00ffff; /* Change color on hover */
+}

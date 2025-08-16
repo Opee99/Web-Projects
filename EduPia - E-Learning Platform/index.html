@@ -1,0 +1,462 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPia - E-Learning Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/4.1.17/framer-motion.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="glassy-neon fixed top-0 w-full py-4 px-8 flex items-center justify-between z-10">
+    <!-- Left Side: EduPia Logo -->
+    <div class="text-2xl font-bold neon-text hover:scale-105 transition-transform">
+      <i class="fas fa-rocket mr-2"></i> EduPia
+    </div>
+
+    <!-- Hamburger Icon (for mobile) -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none focus:shadow-outline">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path id="hamburger-icon" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Middle: Animated Menu -->
+    <div class="hidden md:flex space-x-6" id="menu-links">
+      <a href="#cover" class="hover:text-[#00ffff] transition-colors">Home</a>
+      <a href="#categories" class="hover:text-[#00ffff] transition-colors">Categories</a>
+      <a href="#courses" class="hover:text-[#00ffff] transition-colors">Courses</a>
+      <a href="#about" class="hover:text-[#00ffff] transition-colors">About Us</a>
+      <a href="#contact" class="hover:text-[#00ffff] transition-colors">Contact</a>
+    </div>
+
+    <!-- Right Side: Profile, Cart, Login -->
+    <div class="flex items-center space-x-4">
+      <a href="profile.html">
+        <i class="fas fa-user text-xl hover:text-cyan-400 transition-colors"></i>
+      </a>
+      <div class="relative">
+        <i class="fas fa-shopping-cart text-xl hover:text-cyan-400 transition-colors"></i>
+        <span
+          class="absolute -top-2 -right-2 bg-cyan-500 text-black rounded-full px-1 text-xs">0</span>
+      </div>
+      <button class="neon-button">Login</button>
+    </div>
+  </nav>
+
+  <!-- Login/Registration Popup -->
+  <div id="loginModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden">
+    <div class="glassy-neon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-full max-w-md">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-300">
+          <i class="fas fa-times"></i>
+        </button>
+      <h2 class="text-2xl font-bold neon-text text-center mb-4">Login / Register</h2>
+      <form id="loginForm" action="login.php" method="post">
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="username">Username</label>
+          <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" name="username">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="password">Password</label>
+          <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" name="password">
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="neon-button" type="submit">Login</button>
+          <a href="#" id="registerLink"
+            class="inline-block align-baseline font-bold text-sm neon-text hover:text-cyan-400">
+            Register
+          </a>
+        </div>
+      </form>
+
+      <form id="registerForm" class="hidden" action="register.php" method="post">
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="newUsername">New Username</label>
+          <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="newUsername" type="text" placeholder="New Username" name="newUsername">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="newEmail">Email</label>
+          <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="newEmail" type="email" placeholder="Email" name="newEmail">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="newPassword">New Password</label>
+          <input class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="newPassword" type="password" placeholder="New Password" name="newPassword">
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="neon-button" type="submit">Register</button>
+          <a href="#" id="loginLink" class="inline-block align-baseline font-bold text-sm neon-text hover:text-cyan-400">
+            Login
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Popup -->
+  <div id="cartModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden">
+        <div class="glassy-neon absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 rounded-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold neon-text text-center mb-4">Your Cart</h2>
+            <ul>
+                <li class="text-gray-300 mb-2">No items in cart.</li>
+                <!-- Add cart items here dynamically -->
+            </ul>
+            <div class="text-center mt-4">
+                <button class="neon-button">Checkout</button>
+            </div>
+            <button id="closeCartModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-300">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+  <!-- Cover Section (Hero Banner) -->
+  <header class="relative h-screen flex items-center justify-center mt-0 pt-20" id="cover">
+    <div class="container mx-auto px-8 text-center">
+      <div class="flex flex-col md:flex-row items-center justify-center">
+
+        <!-- Left Side: Animated Text & Button -->
+        <div class="md:w-1/2 text-left">
+          <h1 class="text-4xl md:text-5xl font-bold neon-text mb-6" id="cover-text">
+          </h1>
+          <button class="neon-button text-xl">Login / Register</button>
+        </div>
+
+        <!-- Right Side: AI Illustration -->
+        <div class="md:w-1/2">
+          <img src="img/home.png"
+            alt="AI Educational Illustration" class="rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories Section -->
+  <section class="py-16 px-8" id="categories">
+    <h2 class="text-3xl font-bold neon-text text-center mb-8">Explore Our Categories</h2>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8" id="categoryContainer">
+      <!-- Category Cards -->
+      <div class="category-card glassy-neon p-6 rounded-lg text-center hover:scale-105 transition-transform">
+        <i class="fas fa-brain fa-3x neon-text mb-4"></i>
+        <h3 class="text-xl font-semibold neon-text">AI & ML</h3>
+      </div>
+      <div class="category-card glassy-neon p-6 rounded-lg text-center hover:scale-105 transition-transform">
+        <i class="fas fa-code fa-3x neon-text mb-4"></i>
+        <h3 class="text-xl font-semibold neon-text">Web Development</h3>
+      </div>
+      <div class="category-card glassy-neon p-6 rounded-lg text-center hover:scale-105 transition-transform">
+        <i class="fas fa-chart-bar fa-3x neon-text mb-4"></i>
+        <h3 class="text-xl font-semibold neon-text">Data Science</h3>
+      </div>
+      <div class="category-card glassy-neon p-6 rounded-lg text-center hover:scale-105 transition-transform">
+        <i class="fas fa-briefcase fa-3x neon-text mb-4"></i>
+        <h3 class="text-xl font-semibold neon-text">Business 🚀</h3>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <button id="loadMoreCategoriesButton" class="neon-button">More Categories</button>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="py-16 px-8" id="courses">
+    <h2 class="text-3xl font-bold neon-text text-center mb-8">Featured Courses</h2>
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8" id="courseContainer">
+      <!-- Course Cards -->
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course1.jpg" alt="Course 1" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$49.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">4.5 (25 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">Web Development eith PHP, Laravel & VUE</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 8 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course2.jpg" alt="Course 2" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$79.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">4.8 (32 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">Machine Learning with Python</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 12 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course3.jpg" alt="Course 3" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$59.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">4.6 (18 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">Data Analysis</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 10 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course4.jpg" alt="Course 4" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$69.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">4.7 (22 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">Quality Assurance</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 11 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course5.jpg" alt="Course 5" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$89.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">4.9 (45 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">Data Science</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 14 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+
+      <div class="course-card glassy-neon p-6 rounded-lg">
+        <img src="img/course6.jpg" alt="Course 6" class="rounded-md mb-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="neon-text">$99.99</span>
+          <div class="flex items-center">
+            <i class="fas fa-star text-yellow-400 mr-1"></i>
+            <span class="text-sm">5.0 (50 Reviews)</span>
+          </div>
+        </div>
+        <p class="text-gray-300">IELTS by Munzereen Shahid</p>
+        <div class="mt-4">
+          <div class="flex items-center justify-between">
+            <span>Duration: 16 Weeks</span>
+            <div class="w-1/2 bg-gray-700 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around mt-4">
+          <button class="neon-button text-xs">Add to Cart</button>
+          <button class="neon-button text-xs">Buy Now</button>
+        </div>
+        <div class="flex justify-center mt-2">
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400 mr-1"></i>
+          <i class="far fa-star text-yellow-400"></i>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <button id="loadMoreButton" class="neon-button">More Courses</button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 px-8" id="about">
+    <h2 class="text-3xl font-bold neon-text text-center mb-8">About EduPia</h2>
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+      <!-- Left Side: AI Illustration -->
+      <div class="md:w-1/2">
+        <img src="img/about.png" alt="About Us Illustration" class="rounded-lg shadow-lg">
+      </div>
+
+      <!-- Right Side: Smooth Scrolling Text -->
+      <div class="md:w-1/2 p-8">
+        <p class="text-lg text-gray-300! leading-relaxed">
+          EduPia is a futuristic e-learning platform designed to make education accessible and engaging for everyone.
+          Our mission is to provide high-quality online courses that empower learners to own their future and acquire
+          new skills. With vibrant visuals, smooth animations, and an immersive user experience, EduPia aims to
+          transform online learning into an exciting and fun adventure. Join us and embark on a quest for knowledge!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 px-8" id="contact">
+    <h2 class="text-3xl font-bold neon-text text-center mb-8">Contact Us</h2>
+    <div class="container mx-auto md:w-1/2">
+      <form class="glassy-neon p-8 rounded-lg" action="contact.php" method="post">
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="name">Name</label>
+          <input
+            class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name" type="text" placeholder="Your Name" name="name">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="email">Email</label>
+          <input
+            class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" type="email" placeholder="Email" name="email">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="subject">Subject</label>
+          <input
+            class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="subject" type="text" placeholder="Subject" name="subject">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-300 text-sm font-bold mb-2" for="message">Message</label>
+          <textarea
+            class="glassy-neon shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="message" rows="5" placeholder="Your Message" name="message"></textarea>
+        </div>
+        <div class="text-center">
+          <button class="neon-button">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="glassy-neon py-8 px-8">
+     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+       <!-- Contact Information -->
+       <div class="mb-4 md:mb-0">
+         <p class="text-gray-300">
+           <i class="fas fa-phone mr-2"></i> Call: (123) 456-7890<br>
+           <i class="fas fa-envelope mr-2"></i> Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785d5c4d494d5d4b4c165b5755">info@edupia.com</a>
+         </p>
+       </div>
+
+       <!-- Quick Navigation Links -->
+       <div class="mb-4 md:mb-0">
+                 <a href="index.html#cover" class="text-gray-300 hover:text-cyan-400 mr-4">Home</a>
+                 <a href="index.html#categories" class="text-gray-300 hover:text-cyan-400 mr-4">Categories</a>
+                 <a href="index.html#courses" class="text-gray-300 hover:text-cyan-400 mr-4">Courses</a>
+                 <a href="index.html#about" class="text-gray-300 hover:text-cyan-400 mr-4">About Us</a>
+                 <a href="index.html#contact" class="text-gray-300 hover:text-cyan-400">Contact</a>
+             </div>
+
+       <!-- Social Media Icons -->
+       <div>
+         <a href="#" class="text-gray-300 hover:text-cyan-400 mr-4"><i class="fab fa-facebook-f fa-lg"></i></a>
+         <a href="#" class="text-gray-300 hover:text-cyan-400 mr-4"><i class="fab fa-twitter fa-lg"></i></a>
+         <a href="#" class="text-gray-300 hover:text-cyan-400"><i class="fab fa-instagram fa-lg"></i></a>
+       </div>
+     </div>
+     <p class="text-center text-gray-500 mt-4">
+       &copy; 2025 EduPia. All rights reserved.
+     </p>
+   </footer>
+
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   <script src="app.js"></script>
+ </body>
+
+</html>
