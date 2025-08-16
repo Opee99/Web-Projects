@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Result</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f1f8e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #33691e;
+    }
+    .result {
+      font-size: 24px;
+      margin: 20px 0;
+      background: #aed581;
+      padding: 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      background: #558b2f;
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Recommended Crop</h2>
+    <div class="result" id="prediction">Loading...</div><br>
+    <a href="index.html">Try Again</a>
+  </div>
+  <script>
+    document.getElementById("prediction").textContent = localStorage.getItem("prediction") || "No result found";
+  </script>
+</body>
+</html>
