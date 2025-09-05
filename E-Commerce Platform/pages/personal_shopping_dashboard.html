@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Shopping Dashboard - FutureCommerce</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Ffuturecomm8454back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-primary-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 20L18 26L28 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.2"/>
+                    </svg>
+                    <span class="ml-3 text-xl font-bold text-gradient">FutureCommerce</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="ai_powered_homepage.html" class="text-text-secondary hover:text-accent transition-smooth">Home</a>
+                    <a href="ai_discovery_portal.html" class="text-text-secondary hover:text-accent transition-smooth">Discovery</a>
+                    <a href="immersive_product_experience.html" class="text-text-secondary hover:text-accent transition-smooth">Products</a>
+                    <a href="personal_shopping_dashboard.html" class="text-accent font-medium">Dashboard</a>
+                    <a href="innovation_lab_showcase.html" class="text-text-secondary hover:text-accent transition-smooth">Innovation Lab</a>
+                    <a href="trust_transparency_hub.html" class="text-text-secondary hover:text-accent transition-smooth">Trust Center</a>
+                </div>
+
+                <!-- Voice Search & Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-smooth" title="Voice Search">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full bg-primary-100 text-text-secondary hover:bg-primary-200 transition-smooth">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5H17M9 19.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM20.5 19.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                        </svg>
+                    </button>
+                    <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-medium">A</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="pt-24 pb-8 bg-gradient-to-br from-accent-50 via-background to-primary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start justify-between mb-8">
+                <div>
+                    <h1 class="text-4xl font-bold text-primary mb-4">Welcome back, Alex!</h1>
+                    <p class="text-xl text-text-secondary">Your AI shopping assistant has been busy learning your preferences</p>
+                </div>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <button class="btn-secondary flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Settings</span>
+                    </button>
+                    <button class="btn-primary flex items-center space-x-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                        </svg>
+                        <span>Voice Command</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-1">94%</h3>
+                    <p class="text-sm text-text-secondary">AI Accuracy</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-1">12</h3>
+                    <p class="text-sm text-text-secondary">Active Orders</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-1">47</h3>
+                    <p class="text-sm text-text-secondary">Wishlist Items</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-12 h-12 bg-error/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-6 h-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-1">$2,340</h3>
+                    <p class="text-sm text-text-secondary">Saved This Year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <section class="py-12 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Left Column - AI Recommendations & Orders -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- AI Recommendations Feed -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold text-primary">AI Recommendations</h2>
+                            <button class="text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                                Refresh Feed
+                            </button>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Recommendation Item 1 -->
+                            <div class="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border border-accent/20">
+                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&auto=format&fit=crop" alt="Running Shoes" class="w-20 h-20 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=300'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <h3 class="font-semibold text-lg">Premium Running Shoes</h3>
+                                        <span class="text-accent font-bold">$149.99</span>
+                                    </div>
+                                    <p class="text-text-secondary text-sm mb-3">Perfect for your morning runs based on your fitness tracker data</p>
+                                    <div class="flex items-center space-x-4 mb-3">
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">95% style match</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-success rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Similar to liked items</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-warning rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Weather-appropriate</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <button class="bg-accent text-white px-4 py-2 rounded-lg text-sm hover:bg-accent-600 transition-smooth">
+                                            Add to Cart
+                                        </button>
+                                        <button class="text-text-secondary hover:text-accent transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="text-text-secondary hover:text-accent transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recommendation Item 2 -->
+                            <div class="flex items-start space-x-4 p-4 bg-success/5 rounded-lg border border-success/20">
+                                <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=300&auto=format&fit=crop" alt="Fitness Tracker" class="w-20 h-20 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pixabay.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=300'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <h3 class="font-semibold text-lg">Advanced Fitness Tracker</h3>
+                                        <span class="text-accent font-bold">$199.99</span>
+                                    </div>
+                                    <p class="text-text-secondary text-sm mb-3">Upgrade recommendation based on your current device usage patterns</p>
+                                    <div class="flex items-center space-x-4 mb-3">
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-success rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Health goals aligned</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Feature upgrade</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-warning rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Price drop alert</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <button class="bg-success text-white px-4 py-2 rounded-lg text-sm hover:bg-success-600 transition-smooth">
+                                            Compare Models
+                                        </button>
+                                        <button class="text-text-secondary hover:text-success transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="text-text-secondary hover:text-success transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recommendation Item 3 -->
+                            <div class="flex items-start space-x-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=300&auto=format&fit=crop" alt="Wireless Headphones" class="w-20 h-20 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pixabay.com/photos/3683983_1280.jpg?auto=compress&cs=tinysrgb&w=300'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-start justify-between mb-2">
+                                        <h3 class="font-semibold text-lg">Noise-Canceling Headphones</h3>
+                                        <span class="text-accent font-bold">$299.99</span>
+                                    </div>
+                                    <p class="text-text-secondary text-sm mb-3">Recommended for your work-from-home setup and music preferences</p>
+                                    <div class="flex items-center space-x-4 mb-3">
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-warning rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Audio quality match</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Work productivity</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-success rounded-full"></div>
+                                            <span class="text-xs text-text-secondary">Brand preference</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <button class="bg-warning text-white px-4 py-2 rounded-lg text-sm hover:bg-warning-600 transition-smooth">
+                                            Try AR Demo
+                                        </button>
+                                        <button class="text-text-secondary hover:text-warning transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                        </button>
+                                        <button class="text-text-secondary hover:text-warning transition-smooth">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-6">
+                            <button class="text-accent hover:text-accent-600 transition-smooth font-medium">
+                                View All Recommendations →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Order Intelligence -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold text-primary">Order Intelligence</h2>
+                            <button class="text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                                View All Orders
+                            </button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Order Item 1 -->
+                            <div class="flex items-center space-x-4 p-4 bg-success/5 rounded-lg border border-success/20">
+                                <div class="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Coffee Beans - Monthly Subscription</h3>
+                                    <p class="text-text-secondary text-sm">Delivered today • Next delivery: Oct 5, 2025</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Auto-reorder active</span>
+                                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">AI optimized timing</span>
+                                    </div>
+                                </div>
+                                <button class="text-success hover:text-success-600 transition-smooth">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Order Item 2 -->
+                            <div class="flex items-center space-x-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
+                                <div class="w-12 h-12 bg-warning/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Wireless Charging Pad</h3>
+                                    <p class="text-text-secondary text-sm">In transit • Expected: Tomorrow by 3 PM</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded-full">Weather delay possible</span>
+                                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">AI tracking active</span>
+                                    </div>
+                                </div>
+                                <button class="text-warning hover:text-warning-600 transition-smooth">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Order Item 3 -->
+                            <div class="flex items-center space-x-4 p-4 bg-accent/5 rounded-lg border border-accent/20">
+                                <div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold">Smart Home Security Camera</h3>
+                                    <p class="text-text-secondary text-sm">Processing • AI suggests installation service</p>
+                                    <div class="flex items-center space-x-2 mt-2">
+                                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">Installation recommended</span>
+                                        <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Setup guide ready</span>
+                                    </div>
+                                </div>
+                                <button class="text-accent hover:text-accent-600 transition-smooth">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Sidebar -->
+                <div class="space-y-8">
+                    <!-- Preference Learning Center -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-primary mb-4">Preference Learning</h3>
+                        <p class="text-text-secondary text-sm mb-6">Help your AI get smarter by rating recent recommendations</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                                <span class="text-sm font-medium">Minimalist Design</span>
+                                <div class="flex items-center space-x-1">
+                                    <button class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <button class="w-6 h-6 rounded-full bg-primary-200 text-text-secondary flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                                <span class="text-sm font-medium">Eco-Friendly Products</span>
+                                <div class="flex items-center space-x-1">
+                                    <button class="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <button class="w-6 h-6 rounded-full bg-primary-200 text-text-secondary flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                                <span class="text-sm font-medium">Premium Brands</span>
+                                <div class="flex items-center space-x-1">
+                                    <button class="w-6 h-6 rounded-full bg-primary-200 text-text-secondary flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                    <button class="w-6 h-6 rounded-full bg-error text-white flex items-center justify-center text-xs">
+                                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-4 text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                            Update All Preferences
+                        </button>
+                    </div>
+
+                    <!-- Wishlist Management -->
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-primary">Smart Wishlist</h3>
+                            <span class="text-sm text-text-secondary">47 items</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3 p-3 bg-success/5 rounded-lg border border-success/20">
+                                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=60&auto=format&fit=crop" alt="Smart Watch" class="w-12 h-12 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pixabay.com/photos/2017/08/12/10/10/watch-2634736_1280.jpg'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-sm">Smart Fitness Watch</h4>
+                                    <p class="text-xs text-success">Price dropped 15%</p>
+                                </div>
+                                <button class="text-success hover:text-success-600 transition-smooth">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3 p-3 bg-warning/5 rounded-lg border border-warning/20">
+                                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=60&auto=format&fit=crop" alt="Wireless Headphones" class="w-12 h-12 object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=60'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-sm">Wireless Headphones</h4>
+                                    <p class="text-xs text-warning">Back in stock</p>
+                                </div>
+                                <button class="text-warning hover:text-warning-600 transition-smooth">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-4 text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                            View Full Wishlist →
+                        </button>
+                    </div>
+
+                    <!-- Sustainability Tracker -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-primary mb-4">Sustainability Impact</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="text-center">
+                                <div class="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <svg class="w-10 h-10 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="text-2xl font-bold text-success mb-1">87%</h4>
+                                <p class="text-sm text-text-secondary">Eco-friendly purchases this year</p>
+                            </div>
+                            
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Carbon footprint saved</span>
+                                    <span class="font-medium text-success">2.3 tons CO₂</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Sustainable brands</span>
+                                    <span class="font-medium text-success">23 purchases</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-text-secondary">Recycled packaging</span>
+                                    <span class="font-medium text-success">89% of orders</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-4 bg-success text-white py-2 rounded-lg text-sm hover:bg-success-600 transition-smooth">
+                            View Eco Recommendations
+                        </button>
+                    </div>
+
+                    <!-- Budget Intelligence -->
+                    <div class="card">
+                        <h3 class="text-xl font-bold text-primary mb-4">Budget Intelligence</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-secondary">Monthly spending</span>
+                                <span class="font-bold text-primary">$1,247</span>
+                            </div>
+                            <div class="w-full bg-primary-100 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 62%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-text-secondary">$0</span>
+                                <span class="text-text-secondary">Budget: $2,000</span>
+                            </div>
+                            
+                            <div class="bg-accent/5 rounded-lg p-3 border border-accent/20">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                    <span class="text-sm font-medium text-accent">AI Insight</span>
+                                </div>
+                                <p class="text-xs text-text-secondary">You're spending 23% less on electronics this month. Consider the fitness tracker upgrade now for better value.</p>
+                            </div>
+                        </div>
+
+                        <button class="w-full mt-4 text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                            View Spending Analysis
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Command History & Privacy Controls -->
+    <section class="py-12 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Voice Command History -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-primary">Voice Command History</h2>
+                        <button class="text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                            Clear History
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 p-4 bg-accent/5 rounded-lg border border-accent/20">
+                            <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm mb-1">"Find me comfortable running shoes under $150"</p>
+                                <p class="text-xs text-text-secondary mb-2">2 hours ago</p>
+                                <div class="bg-background rounded-lg p-3 border">
+                                    <p class="text-xs text-text-secondary mb-2">AI Response: Found 12 matching products based on your size, style preferences, and budget. Added top 3 recommendations to your feed.</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Improved recommendations</span>
+                                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">Size preference learned</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 bg-success/5 rounded-lg border border-success/20">
+                            <div class="w-10 h-10 bg-success/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm mb-1">"Reorder my usual coffee beans"</p>
+                                <p class="text-xs text-text-secondary mb-2">Yesterday</p>
+                                <div class="bg-background rounded-lg p-3 border">
+                                    <p class="text-xs text-text-secondary mb-2">AI Response: Ordered your preferred Ethiopian blend. Delivery scheduled for today. Set up auto-reorder for optimal timing?</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Order completed</span>
+                                        <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded-full">Auto-reorder suggested</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-4 bg-warning/5 rounded-lg border border-warning/20">
+                            <div class="w-10 h-10 bg-warning/20 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <p class="font-medium text-sm mb-1">"Show me eco-friendly alternatives to my wishlist"</p>
+                                <p class="text-xs text-text-secondary mb-2">3 days ago</p>
+                                <div class="bg-background rounded-lg p-3 border">
+                                    <p class="text-xs text-text-secondary mb-2">AI Response: Found sustainable alternatives for 8 items. Updated your sustainability preferences to prioritize eco-friendly options.</p>
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Sustainability preference updated</span>
+                                        <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">8 alternatives found</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6">
+                        <button class="text-accent hover:text-accent-600 transition-smooth font-medium">
+                            View Full History →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Privacy Controls -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-bold text-primary">Privacy Controls</h2>
+                        <button class="text-accent hover:text-accent-600 transition-smooth text-sm font-medium">
+                            Export Data
+                        </button>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg mb-4">Data Usage Settings</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                                    <div>
+                                        <h4 class="font-medium text-sm">Browsing History</h4>
+                                        <p class="text-xs text-text-secondary">Use browsing data for recommendations</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-success rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 shadow-sm transition-transform"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                                    <div>
+                                        <h4 class="font-medium text-sm">Location Data</h4>
+                                        <p class="text-xs text-text-secondary">Improve delivery and local recommendations</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-primary-300 rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5 shadow-sm transition-transform"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                                    <div>
+                                        <h4 class="font-medium text-sm">Voice Recordings</h4>
+                                        <p class="text-xs text-text-secondary">Store voice commands for better understanding</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-success rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 shadow-sm transition-transform"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                                    <div>
+                                        <h4 class="font-medium text-sm">Purchase History</h4>
+                                        <p class="text-xs text-text-secondary">Analyze purchases for predictive recommendations</p>
+                                    </div>
+                                    <div class="w-12 h-6 bg-success rounded-full relative cursor-pointer">
+                                        <div class="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 shadow-sm transition-transform"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-lg mb-4">AI Personalization Level</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" id="minimal" name="personalization" class="text-accent" />
+                                    <label for="minimal" class="text-sm">
+                                        <span class="font-medium">Minimal</span> - Basic recommendations only
+                                    </label>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" id="balanced" name="personalization" class="text-accent" checked />
+                                    <label for="balanced" class="text-sm">
+                                        <span class="font-medium">Balanced</span> - Personalized with privacy protection
+                                    </label>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <input type="radio" id="maximum" name="personalization" class="text-accent" />
+                                    <label for="maximum" class="text-sm">
+                                        <span class="font-medium">Maximum</span> - Full AI personalization
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-accent/5 rounded-lg p-4 border border-accent/20">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span class="text-sm font-medium text-accent">Privacy Impact</span>
+                            </div>
+                            <p class="text-xs text-text-secondary">Current settings provide 94% recommendation accuracy while maintaining strong privacy protection. Your data is encrypted and never shared with third parties.</p>
+                        </div>
+                    </div>
+
+                    <button class="w-full mt-6 bg-accent text-white py-3 rounded-lg hover:bg-accent-600 transition-smooth">
+                        Save Privacy Settings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Lab Beta Features -->
+    <section class="py-12 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-primary mb-4">Innovation Lab</h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Exclusive beta features available to you. Help shape the future of AI shopping.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Beta Feature 1 -->
+                <div class="card group hover:shadow-floating transition-all duration-500">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/20 transition-smooth">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Predictive Cart</h3>
+                        <p class="text-text-secondary mb-6">AI automatically adds items you're likely to need before you think of them</p>
+                        <div class="flex items-center justify-center space-x-2 mb-6">
+                            <span class="text-xs bg-accent/20 text-accent px-2 py-1 rounded-full">Beta</span>
+                            <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Enable feature</span>
+                            <div class="w-10 h-6 bg-success rounded-full relative">
+                                <div class="w-4 h-4 bg-white rounded-full absolute top-1 right-1 shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beta Feature 2 -->
+                <div class="card group hover:shadow-floating transition-all duration-500">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-warning/20 transition-smooth">
+                            <svg class="w-8 h-8 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">AI Video Reviews</h3>
+                        <p class="text-text-secondary mb-6">Generate personalized video reviews based on your preferences and usage patterns</p>
+                        <div class="flex items-center justify-center space-x-2 mb-6">
+                            <span class="text-xs bg-warning/20 text-warning px-2 py-1 rounded-full">Beta</span>
+                            <span class="text-xs bg-primary-200/50 text-text-secondary px-2 py-1 rounded-full">Inactive</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Enable feature</span>
+                            <div class="w-10 h-6 bg-primary-300 rounded-full relative">
+                                <div class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beta Feature 3 -->
+                <div class="card group hover:shadow-floating transition-all duration-500">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-success/20 transition-smooth">
+                            <svg class="w-8 h-8 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Social Shopping AI</h3>
+                        <p class="text-text-secondary mb-6">Connect with friends and get AI-powered group recommendations for shared interests</p>
+                        <div class="flex items-center justify-center space-x-2 mb-6">
+                            <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Beta</span>
+                            <span class="text-xs bg-success/20 text-success px-2 py-1 rounded-full">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text-secondary">Enable feature</span>
+                            <div class="w-10 h-6 bg-success rounded-full relative">
+                                <div class="w-4 h-4 bg-white rounded-full absolute top-1 right-1 shadow-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="innovation_lab_showcase.html" class="btn-primary text-lg px-8 py-4">
+                    Explore All Beta Features
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <svg class="w-10 h-10 text-accent" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 20L18 26L28 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.2"/>
+                        </svg>
+                        <span class="ml-3 text-2xl font-bold">FutureCommerce</span>
+                    </div>
+                    <p class="text-primary-300 mb-6 max-w-md">
+                        The next-generation AI-powered e-commerce platform that transforms how you discover and shop for products.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="p-2 bg-primary-800 rounded-lg hover:bg-primary-700 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </button>
+                        <button class="p-2 bg-primary-800 rounded-lg hover:bg-primary-700 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </button>
+                        <button class="p-2 bg-primary-800 rounded-lg hover:bg-primary-700 transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="ai_discovery_portal.html" class="text-primary-300 hover:text-white transition-smooth">Discovery Portal</a></li>
+                        <li><a href="immersive_product_experience.html" class="text-primary-300 hover:text-white transition-smooth">Products</a></li>
+                        <li><a href="personal_shopping_dashboard.html" class="text-primary-300 hover:text-white transition-smooth">Dashboard</a></li>
+                        <li><a href="innovation_lab_showcase.html" class="text-primary-300 hover:text-white transition-smooth">Innovation Lab</a></li>
+                        <li><a href="trust_transparency_hub.html" class="text-primary-300 hover:text-white transition-smooth">Trust Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="javascript:void(0)" class="text-primary-300 hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-300 hover:text-white transition-smooth">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-300 hover:text-white transition-smooth">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-300 hover:text-white transition-smooth">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-300 hover:text-white transition-smooth">AI Ethics</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+                <p class="text-primary-300 text-sm">
+                    © 2025 FutureCommerce. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <span class="text-primary-300 text-sm">Powered by AI</span>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                        <span class="text-success text-sm font-medium">System Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating AI Assistant -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="w-14 h-14 bg-accent text-white rounded-full shadow-floating hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group">
+            <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+        </button>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
